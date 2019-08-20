@@ -260,23 +260,36 @@ public final class SiteIndex
     {
         return lhs.mapping.elementsEqual(rhs.mapping)
     }
+
+    public func hash(into hasher: inout Hasher) {
+        for (_,v) in mapping.enumerated() {
+            hasher.combine(v.id)
+        }
+    }
     
-    public var hashValue: Int
+    // an incoming causal tree might have added sites, and our site ids are distributed in lexicographic-ish order,
+    // so we may need to remap some site ids if the orders no longer line up; neither site index is mutated
+    static func indexMap(localSiteIndex: SiteIndex, remoteSiteIndex: SiteIndex) -> [SiteId:SiteId]
     {
-        var hash: Int = 0
-     
-        for (i,v) in mapping.enumerated()
+        let oldSiteIndex = localSiteIndex
+        let newSiteIndex = localSiteIndex.copy() as! SiteIndex
+        var remoteSiteIndexPointer = remoteSiteIndex
+        
+        let firstDifferentIndex = newSiteIndex.integrateReturningFirstDiffIndex(&remoteSiteIndexPointer)
+        var remapMap: [SiteId:SiteId] = [:]
+        if let index = firstDifferentIndex
         {
-            if i == 0
+            let newMapping = newSiteIndex.siteMapping()
+            for i in index..<oldSiteIndex.siteCount()
             {
-                hash = v.id.hashValue
-            }
-            else
-            {
-                hash ^= v.id.hashValue
+                let oldSite = SiteId(i)
+                let newSite = newMapping[oldSiteIndex.site(oldSite)!]
+                remapMap[oldSite] = newSite
             }
         }
         
-        return hash
+        assert(remapMap.values.count == Set(remapMap.values).count, "some sites mapped to identical sites")
+        
+        return remapMap
     }
 }

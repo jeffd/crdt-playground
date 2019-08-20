@@ -56,10 +56,11 @@ extension AtomIdType
     {
         return (lhs.site == rhs.site ? lhs.index < rhs.index : lhs.site < rhs.site)
     }
-    
-    public var hashValue: Int
+
+    public func hash(into hasher: inout Hasher)
     {
-        return site.hashValue ^ index.hashValue
+        hasher.combine(site)
+        hasher.combine(index)
     }
 }
 
@@ -129,6 +130,15 @@ public struct Atom<ValueT: CRDTValueT>: CustomStringConvertible, IndexRemappable
         self.timestamp = timestamp
         self.value = value
     }
+
+    public func hash(into hasher: inout Hasher)
+    {
+        hasher.combine(site)
+        hasher.combine(causingSite)
+        hasher.combine(index)
+        hasher.combine(causingIndex)
+        hasher.combine(timestamp)
+    }
     
     public var id: AtomId
     {
@@ -195,6 +205,8 @@ public protocol WeftType: Equatable, CustomStringConvertible
 {
     associatedtype SiteT: CRDTSiteUUIDT
     
+    init()
+    
     // TODO: I don't like that this tiny structure has to be malloc'd
     var mapping: [SiteT:YarnIndex] { get set }
     
@@ -220,27 +232,12 @@ extension WeftType
         
         return true
     }
-    
-    public var hashValue: Int
-    {
-        var hash = 0
-        
-        // TODO: is this hashvalue correct?
-        for (i,pair) in mapping.enumerated()
-        {
-            if i == 0
-            {
-                hash = pair.key.hashValue
-                hash ^= pair.value.hashValue
-            }
-            else
-            {
-                hash ^= pair.key.hashValue
-                hash ^= pair.value.hashValue
-            }
+
+    public func hash(into hasher: inout Hasher) {
+        for (_,pair) in mapping.enumerated() {
+            hasher.combine(pair.key)
+            hasher.combine(pair.value)
         }
-        
-        return hash
     }
     
     public var description: String
@@ -308,6 +305,8 @@ public struct Weft<T: CRDTSiteUUIDT>: WeftType
 {
     public var mapping: [T:YarnIndex] = [:]
     
+    public init() {}
+    
     public func isSuperset(of other: Weft<T>) -> Bool
     {
         for (uuid,index) in other.mapping
@@ -328,7 +327,9 @@ public struct Weft<T: CRDTSiteUUIDT>: WeftType
 }
 
 // for internal and implementation use -- gets invalidated when new sites are merged into the site map
-public struct LocalWeft: WeftType
+public struct LocalWeft: WeftType, Hashable
 {
     public var mapping: [SiteId:YarnIndex] = [:]
+    
+    public init() {}
 }

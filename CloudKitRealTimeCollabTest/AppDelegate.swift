@@ -17,8 +17,7 @@ import CloudKit
 {
     var window: UIWindow?
     
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool
-    {
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
         print("Device UUID: \(DataStack.sharedInstance.id)")
         
         // AB: for this to work, we need remote notification background mode enabled
@@ -139,7 +138,7 @@ import CloudKit
             
             timeMe({
                 var prevAtom = string.weave.weave()[0].id
-                for i in 0..<count
+                for _ in 0..<count
                 {
                     //if i % 1000 == 0
                     //{
@@ -230,6 +229,7 @@ import CloudKit
         { error in
             if let error = error
             {
+                print(error)
                 assert(false)
             }
             else

@@ -320,7 +320,7 @@ class CausalTreeDrawingView : NSView, CALayerDelegate
                 // bezier control points
                 let p = min(h, Scalar(peak))
                 let l = (h - p) / Scalar(cos(CGFloat.pi - CGFloat.pi/2 - angle))
-                let v_p = v_perp * p + v_m
+                let _ = v_perp * p + v_m // v_p
                 let b_0 = v_0 + (v_h - v_0).normalized() * max((v_h - v_0).length - l, 0)
                 let b_1 = v_1 + (v_h - v_1).normalized() * max((v_h - v_1).length - l, 0)
                 
@@ -423,7 +423,7 @@ class CausalTreeDrawingView : NSView, CALayerDelegate
                 let sortedAwareness = awareness.mapping.sorted(by: { (a, b) -> Bool in a.key < b.key })
                 awarenessWeftToDraw = awareness
                 printAwareness: do {
-                    break printAwareness
+//                    break printAwareness
                     if _enqueuedClick != nil {
                         var string = "awareness: "
                         for m in sortedAwareness {
@@ -442,7 +442,7 @@ class CausalTreeDrawingView : NSView, CALayerDelegate
             let elementRange = 0..<delegate.length(forSite: sites[i], forView: self)
             
             drawConnectors: do {
-                break drawConnectors //no connectors for now
+//                break drawConnectors //no connectors for now
                 for j in elementRange {
                     let p = atomCenter(row: i, column: Int(j) - 1)
                     
@@ -517,15 +517,15 @@ class CausalTreeDrawingView : NSView, CALayerDelegate
                     drawText: do {
                         //break drawText
                         
-                        var atomLabelAttributes: [NSAttributedStringKey:AnyObject] = [NSAttributedStringKey.paragraphStyle:atomLabelParagraphStyle, NSAttributedStringKey.font:atomLabelFont]
-                        var clockLabelAttributes: [NSAttributedStringKey:AnyObject] = [NSAttributedStringKey.paragraphStyle:clockLabelParagraphStyle, NSAttributedStringKey.font:clockLabelFont, NSAttributedStringKey.foregroundColor:NSColor.darkGray]
+                        var atomLabelAttributes: [NSAttributedString.Key:AnyObject] = [NSAttributedString.Key.paragraphStyle:atomLabelParagraphStyle, NSAttributedString.Key.font:atomLabelFont]
+                        var clockLabelAttributes: [NSAttributedString.Key:AnyObject] = [NSAttributedString.Key.paragraphStyle:clockLabelParagraphStyle, NSAttributedString.Key.font:clockLabelFont, NSAttributedString.Key.foregroundColor:NSColor.darkGray]
                         if let awareness = awarenessWeftToDraw {
                             if let siteAwareness = awareness.mapping[SiteId(i)],
                                 siteAwareness >= id.index {
                             }
                             else {
-                                atomLabelAttributes[NSAttributedStringKey.foregroundColor] = disabledColor
-                                clockLabelAttributes[NSAttributedStringKey.foregroundColor] = disabledColor
+                                atomLabelAttributes[NSAttributedString.Key.foregroundColor] = disabledColor
+                                clockLabelAttributes[NSAttributedString.Key.foregroundColor] = disabledColor
                             }
                         }
                         
