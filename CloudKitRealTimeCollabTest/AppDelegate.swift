@@ -221,7 +221,7 @@ import CloudKit
         }
     }
     
-    private func application(_ application: UIApplication, userDidAcceptCloudKitShareWith cloudKitShareMetadata: CKShare.Metadata)
+    func application(_ application: UIApplication, userDidAcceptCloudKitShareWith cloudKitShareMetadata: CKShare.Metadata)
     {
         let op = CKAcceptSharesOperation(shareMetadatas: [cloudKitShareMetadata])
         

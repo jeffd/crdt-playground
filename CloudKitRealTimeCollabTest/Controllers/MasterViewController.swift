@@ -320,7 +320,8 @@ class MasterViewController: UIViewController, UITableViewDataSource, UITableView
     func delete(_ id: Network.FileID)
     {
         let indexRow = self.ids.firstIndex(of: id)!
-        let _ = IndexPath(row: indexRow, section: 0)
+        let indexPath = IndexPath(row: indexRow, section: 0)
+
         
         enableInterface(false)
         

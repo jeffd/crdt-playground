@@ -4,12 +4,12 @@ import Foundation
 
 
 // AB: addition
-extension Dictionary: BinaryCodable where Key:Codable, Value:Codable {
+extension Dictionary: BinaryCodable where Key: Codable, Value: Codable {
     public func binaryEncode(to encoder: BinaryEncoder) throws {
         try encoder.encode(self.count)
         for pair in self {
-            try (pair.key).encode(to: encoder)
-            try (pair.value).encode(to: encoder)
+            try (pair.key as Encodable).encode(to: encoder)
+            try (pair.value as Encodable).encode(to: encoder)
         }
     }
     
@@ -20,12 +20,12 @@ extension Dictionary: BinaryCodable where Key:Codable, Value:Codable {
         for _ in 0 ..< count {
             let decodedKey = try Key.init(from: decoder)
             let decodedValue = try Value.init(from: decoder)
-            self[decodedKey] = (decodedValue)
+            self[decodedKey] = decodedValue
         }
     }
 }
 
-extension Array: BinaryCodable where Element:Codable {
+extension Array: BinaryCodable where Element: Codable {
     public func binaryEncode(to encoder: BinaryEncoder) throws {
         try encoder.encode(self.count)
         for element in self {
