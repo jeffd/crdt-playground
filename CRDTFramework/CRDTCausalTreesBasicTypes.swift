@@ -232,27 +232,12 @@ extension WeftType
         
         return true
     }
-    
-    public var hashValue: Int
-    {
-        var hash = 0
-        
-        // TODO: is this hashvalue correct?
-        for (i,pair) in mapping.enumerated()
-        {
-            if i == 0
-            {
-                hash = pair.key.hashValue
-                hash ^= pair.value.hashValue
-            }
-            else
-            {
-                hash ^= pair.key.hashValue
-                hash ^= pair.value.hashValue
-            }
+
+    public func hash(into hasher: inout Hasher) {
+        for (_,pair) in mapping.enumerated() {
+            hasher.combine(pair.key)
+            hasher.combine(pair.value)
         }
-        
-        return hash
     }
     
     public var description: String

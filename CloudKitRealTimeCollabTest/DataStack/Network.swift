@@ -312,10 +312,10 @@ class Network
                     return
                 }
                 
-                var options: [CKRecordZone.ID:CKFetchRecordZoneChangesOperation.ZoneOptions] = [:]
+                var options: [CKRecordZone.ID:CKFetchRecordZoneChangesOperation.ZoneConfiguration] = [:]
                 for zone in self.recordZones
                 {
-                    options[zone] = CKFetchRecordZoneChangesOperation.ZoneOptions()
+                    options[zone] = CKFetchRecordZoneChangesOperation.ZoneConfiguration()
                     options[zone]!.previousServerChangeToken = self.tokens[zone]
                 }
                 let query = CKFetchRecordZoneChangesOperation(recordZoneIDs: self.recordZones, optionsByRecordZoneID: options)

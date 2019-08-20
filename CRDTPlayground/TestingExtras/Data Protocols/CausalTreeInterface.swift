@@ -184,7 +184,7 @@ extension CausalTreeInterfaceProtocol
             print("Actual Size: \(String(format: "%.1f", CGFloat(data.count) / 1024)) kb")
         }, "Encode")
         
-        let dataObj = Data(bytes: data)
+        let dataObj = Data(data)
         return dataObj
     }
     

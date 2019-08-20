@@ -423,7 +423,7 @@ class CausalTreeDrawingView : NSView, CALayerDelegate
                 let sortedAwareness = awareness.mapping.sorted(by: { (a, b) -> Bool in a.key < b.key })
                 awarenessWeftToDraw = awareness
                 printAwareness: do {
-                    break printAwareness
+//                    break printAwareness
                     if _enqueuedClick != nil {
                         var string = "awareness: "
                         for m in sortedAwareness {
@@ -442,7 +442,7 @@ class CausalTreeDrawingView : NSView, CALayerDelegate
             let elementRange = 0..<delegate.length(forSite: sites[i], forView: self)
             
             drawConnectors: do {
-                break drawConnectors //no connectors for now
+//                break drawConnectors //no connectors for now
                 for j in elementRange {
                     let p = atomCenter(row: i, column: Int(j) - 1)
                     

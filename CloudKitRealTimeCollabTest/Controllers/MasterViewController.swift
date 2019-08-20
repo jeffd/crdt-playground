@@ -223,7 +223,7 @@ class MasterViewController: UIViewController, UITableViewDataSource, UITableView
         return true
     }
 
-    private func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath)
+    internal func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath)
     {
         if editingStyle == .delete
         {

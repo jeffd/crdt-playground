@@ -260,24 +260,11 @@ public final class SiteIndex
     {
         return lhs.mapping.elementsEqual(rhs.mapping)
     }
-    
-    public var hashValue: Int
-    {
-        var hash: Int = 0
-     
-        for (i,v) in mapping.enumerated()
-        {
-            if i == 0
-            {
-                hash = v.id.hashValue
-            }
-            else
-            {
-                hash ^= v.id.hashValue
-            }
+
+    public func hash(into hasher: inout Hasher) {
+        for (_,v) in mapping.enumerated() {
+            hasher.combine(v.id)
         }
-        
-        return hash
     }
     
     // an incoming causal tree might have added sites, and our site ids are distributed in lexicographic-ish order,

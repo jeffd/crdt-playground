@@ -182,26 +182,12 @@ final class CRDTMap
     {
         return lhs.map == rhs.map
     }
-    
-    public var hashValue: Int
-    {
-        var hash: Int? = nil
-        
-        for pair in map
-        {
-            let pairHash = pair.key.hashValue ^ pair.value.hashValue
-            
-            if hash == nil
-            {
-                hash = pairHash
-            }
-            else
-            {
-                hash = hash! ^ pairHash
-            }
+
+    public func hash(into hasher: inout Hasher) {
+        for pair in map {
+            hasher.combine(pair.key)
+            hasher.combine(pair.value)
         }
-        
-        return hash ?? 0
     }
 }
 
