@@ -41,7 +41,7 @@ class ABTestCase: XCTestCase
         }
 
         sm = systemMemory()
-        //measure(block)
+//        measure(block)
         block()
         em = systemMemory()
         pm(name)

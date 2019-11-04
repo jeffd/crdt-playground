@@ -453,7 +453,7 @@ class ORDTTests: ABTestCase
     
     func testExample()
     {        
-        return
+//        return
         
         let count = 100000
         
@@ -578,6 +578,6 @@ class ORDTTests: ABTestCase
             map.setValue(TestStruct.zero, forKey: 1)
         }
         
-        TestUtils.validate(&rev)
+        let _ = TestUtils.validate(&rev)
     }
 }
