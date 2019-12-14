@@ -194,7 +194,7 @@
 		4E077F9B1F7024DD00FAEE15 /* CausalTreeInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CausalTreeInterface.swift; sourceTree = "<group>"; };
 		4E077F9D1F70250B00FAEE15 /* CausalTreeInterfaceTextExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CausalTreeInterfaceTextExtensions.swift; sourceTree = "<group>"; };
 		4E0E95E51F98BD5300D35635 /* CausalTreeSetup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CausalTreeSetup.swift; sourceTree = "<group>"; };
-		4E167B601F5594370094E7E1 /* VectorMath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VectorMath.swift; sourceTree = "<group>"; };
+		4E167B601F5594370094E7E1 /* VectorMath.swift */ = {isa = PBXFileReference; indentWidth = 4; lastKnownFileType = sourcecode.swift; path = VectorMath.swift; sourceTree = "<group>"; tabWidth = 4; };
 		4E167B651F5594BF0094E7E1 /* VectorMath+Quartz.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "VectorMath+Quartz.swift"; sourceTree = "<group>"; };
 		4E167B6B1F56249F0094E7E1 /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		4E2AB06E1F9A08B9006F47C9 /* CloudKitRealTimeCollabTest.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CloudKitRealTimeCollabTest.entitlements; sourceTree = "<group>"; };
@@ -509,7 +509,9 @@
 				4EFBCD211F5454B10091F778 /* Products */,
 				4E2AB06F1F9A09A9006F47C9 /* Frameworks */,
 			);
+			indentWidth = 4;
 			sourceTree = "<group>";
+			tabWidth = 4;
 		};
 		4EFBCD211F5454B10091F778 /* Products */ = {
 			isa = PBXGroup;
@@ -678,7 +680,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0900;
-				LastUpgradeCheck = 1120;
+				LastUpgradeCheck = 1130;
 				ORGANIZATIONNAME = "Alexei Baboulevitch";
 				TargetAttributes = {
 					4E64F17D1F98AAA800569170 = {
