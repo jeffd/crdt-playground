@@ -9,7 +9,7 @@
 import Foundation
 import QuartzCore
 
-final class CRDTTextEditing: CvRDT, ApproxSizeable, NSCopying, Codable
+public final class CRDTTextEditing: CvRDT, ApproxSizeable, NSCopying, Codable
 {
     public typealias CRDTMapT = CRDTMap<CausalTreeString.SiteUUIDT, AtomId, CausalTreeString.SiteUUIDT>
     

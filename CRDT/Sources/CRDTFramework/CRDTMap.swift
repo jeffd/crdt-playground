@@ -9,7 +9,7 @@
 import Foundation
 
 // a simple LWW map
-final class CRDTMap
+public final class CRDTMap
     <K: Hashable & Codable, V: Hashable & Codable, S: Hashable & Codable & Comparable> :
     CvRDT, ApproxSizeable, NSCopying, Codable
 {
@@ -18,12 +18,12 @@ final class CRDTMap
     public typealias SiteT = S
     
     // requirement: IDs can be placed in a total order, i.e. ordered and no duplicates
-    struct IDPair: Codable, Hashable, Comparable
+    public struct IDPair: Codable, Hashable, Comparable
     {
         let clock: Clock
         let site: SiteT
         
-        init(_ clock: Clock, _ site: SiteT)
+        public init(_ clock: Clock, _ site: SiteT)
         {
             self.clock = clock
             self.site = site
@@ -40,18 +40,18 @@ final class CRDTMap
             hasher.combine(site)
         }
         
-        static func <(lhs: CRDTMap<K, V, S>.IDPair, rhs: CRDTMap<K, V, S>.IDPair) -> Bool
+        public static func <(lhs: CRDTMap<K, V, S>.IDPair, rhs: CRDTMap<K, V, S>.IDPair) -> Bool
         {
             return (lhs.clock == rhs.clock ? lhs.site < rhs.site : lhs.clock < rhs.clock)
         }
     }
     
-    struct ClockValuePair: Codable, Hashable
+    public struct ClockValuePair: Codable, Hashable
     {
         let id: IDPair
-        let value: ValueT
+        public let value: ValueT
         
-        init(_ id: IDPair, _ value: ValueT)
+        public init(_ id: IDPair, _ value: ValueT)
         {
             self.id = id
             self.value = value
@@ -83,7 +83,7 @@ final class CRDTMap
         self.lamportTimestamp = CRDTCounter<Clock>.init(withValue: 0)
     }
     
-    func copy(with zone: NSZone? = nil) -> Any
+    public func copy(with zone: NSZone? = nil) -> Any
     {
         let returnValue = CRDTMap(withOwner: self.owner)
         
@@ -194,7 +194,7 @@ final class CRDTMap
 // for "degenerate" maps that simply act as, e.g., site registers
 extension CRDTMap where K == S
 {
-    func setValue(_ value: ValueT)
+    public func setValue(_ value: ValueT)
     {
         setValue(value, forKey: owner)
     }

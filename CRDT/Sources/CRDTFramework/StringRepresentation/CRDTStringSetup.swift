@@ -8,4 +8,4 @@
 
 import Foundation
 
-typealias CausalTreeString = CausalTree<UUID, StringCharacterAtom>
+public typealias CausalTreeString = CausalTree<UUID, StringCharacterAtom>

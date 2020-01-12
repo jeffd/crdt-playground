@@ -76,7 +76,7 @@ public func warning(_ condition: @autoclosure () -> Bool, _ message: @autoclosur
 }
 
 
-func onMain(_ async: Bool, _ block: @escaping ()->())
+public func onMain(_ async: Bool, _ block: @escaping ()->())
 {
     if Thread.current.isMainThread
     {
@@ -95,7 +95,7 @@ func onMain(_ async: Bool, _ block: @escaping ()->())
     }
 }
 
-func onMain(_ block: @escaping ()->())
+public func onMain(_ block: @escaping ()->())
 {
     onMain(false, block)
 }

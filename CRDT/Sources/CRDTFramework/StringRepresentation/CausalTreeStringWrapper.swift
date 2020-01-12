@@ -10,13 +10,13 @@ import Foundation
 
 // AB: The extra cache in this class on top of the existing cache in the slice adds extra complexity.
 
-class CausalTreeStringWrapper: NSMutableString
+public class CausalTreeStringWrapper: NSMutableString
 {
     // MARK: - Model -
     
     private(set) weak var crdt: CausalTreeString!
     
-    var revision: CausalTreeString.WeftT?
+    public var revision: CausalTreeString.WeftT?
     {
         didSet
         {
@@ -62,7 +62,7 @@ class CausalTreeStringWrapper: NSMutableString
     
     // MARK: - Lifecycle -
     
-    func initialize(crdt: CausalTreeString, revision: CausalTreeString.WeftT? = nil)
+    public func initialize(crdt: CausalTreeString, revision: CausalTreeString.WeftT? = nil)
     {
         self.crdt = crdt
         self.revision = revision
@@ -109,7 +109,7 @@ class CausalTreeStringWrapper: NSMutableString
         }
     }
     
-    func atomForCharacterAtIndex(_ i: Int) -> AtomId?
+    public func atomForCharacterAtIndex(_ i: Int) -> AtomId?
     {
         if i > visibleCharacters.count || i < 0
         {
@@ -127,7 +127,7 @@ class CausalTreeStringWrapper: NSMutableString
     }
     
     // TODO: PERF: this is currently O(SxN), and will need tuning before production use
-    func characterIndexForAtom(_ a: AtomId) -> Int?
+    public func characterIndexForAtom(_ a: AtomId) -> Int?
     {
         if a == slice[0].id
         {
@@ -147,12 +147,12 @@ class CausalTreeStringWrapper: NSMutableString
     
     // MARK: - Essential Overrides -
     
-    override var length: Int
+    override public var length: Int
     {
         return self.visibleCharacters.count
     }
 
-    override func character(at index: Int) -> unichar
+    override public func character(at index: Int) -> unichar
     {
         let i = self.visibleCharacters[index]
         if case .insert(let char) = self.slice[Int(i)].value
@@ -167,7 +167,7 @@ class CausalTreeStringWrapper: NSMutableString
     }
     
     // TODO: PERF: batch deletes and inserts, otherwise it's O(N^2) per length of insert, which is egregious for pastes
-    override func replaceCharacters(in range: NSRange, with aString: String)
+    override public func replaceCharacters(in range: NSRange, with aString: String)
     {
         let anchor: AtomId
         
