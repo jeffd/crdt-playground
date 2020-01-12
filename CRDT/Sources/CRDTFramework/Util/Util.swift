@@ -119,6 +119,11 @@ public struct Pair<T1: Codable, T2: Codable>: Codable
 {
     public let o1: T1
     public let o2: T2
+
+    public init(o1: T1, o2: T2) {
+        self.o1 = o1
+        self.o2 = o2
+    }
 }
 
 

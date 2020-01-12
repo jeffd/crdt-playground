@@ -14,7 +14,7 @@ public class CausalTreeStringWrapper: NSMutableString
 {
     // MARK: - Model -
     
-    private(set) weak var crdt: CausalTreeString!
+    private(set) weak public var crdt: CausalTreeString!
     
     public var revision: CausalTreeString.WeftT?
     {
