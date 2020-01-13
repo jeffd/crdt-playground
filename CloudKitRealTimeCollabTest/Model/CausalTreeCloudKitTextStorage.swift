@@ -10,6 +10,7 @@
  without any mapping or translation work. */
 
 import UIKit
+import CRDT
 
 class CausalTreeCloudKitTextStorage: NSTextStorage
 {

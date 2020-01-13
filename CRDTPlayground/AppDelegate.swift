@@ -7,7 +7,7 @@
 //
 
 import Cocoa
-//import CRDTFramework_OSX
+import CRDT
 
 @NSApplicationMain class AppDelegate: NSObject, NSApplicationDelegate
 {

@@ -7,7 +7,7 @@
 //
 
 import AppKit
-//import CRDTFramework_OSX
+import CRDT
 
 extension CausalTreeInterfaceProtocol where SiteUUIDT == CausalTreeBezierT.SiteUUIDT, ValueT == CausalTreeBezierT.ValueT
 {

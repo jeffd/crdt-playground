@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import CRDT
 
 // owns in-memory objects, working at the model layer
 class Memory

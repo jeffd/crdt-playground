@@ -10,6 +10,7 @@
 
 import Foundation
 import CloudKit
+import CRDT
 
 // 7. file closing
 // 8. order of ops cleanup, e.g. controllers, state machine
@@ -312,13 +313,14 @@ class Network
                     return
                 }
                 
-                var options: [CKRecordZone.ID:CKFetchRecordZoneChangesOperation.ZoneConfiguration] = [:]
+                var options: [CKRecordZone.ID:CKFetchRecordZoneChangesOperation.ZoneConfiguration]? = [:]
                 for zone in self.recordZones
                 {
-                    options[zone] = CKFetchRecordZoneChangesOperation.ZoneConfiguration()
-                    options[zone]!.previousServerChangeToken = self.tokens[zone]
+                    options?[zone] = CKFetchRecordZoneChangesOperation.ZoneConfiguration()
+                    options?[zone]?.previousServerChangeToken = self.tokens[zone]
                 }
-                let query = CKFetchRecordZoneChangesOperation(recordZoneIDs: self.recordZones, optionsByRecordZoneID: options)
+
+                let query = CKFetchRecordZoneChangesOperation(recordZoneIDs: self.recordZones, configurationsByRecordZoneID: options)
                 query.database = self.db
                 
                 var recordsAwaitingShare = Set<CKRecord>()
@@ -1282,7 +1284,7 @@ class Network
         // local change
         if notification.notificationType == .recordZone
         {
-            guard let zoneNotification = notification as? CKRecordZoneNotification else
+            guard notification is CKRecordZoneNotification else
             {
                 precondition(false, "record zone type notification is not actually a record zone notification object")
                 block(NetworkError.other)

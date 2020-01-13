@@ -7,7 +7,7 @@
 //
 
 import AppKit
-//import CRDTFramework_OSX
+import CRDT
 
 typealias CausalTreeStandardUUIDT = UUID
 typealias CausalTreeTextT = CausalTreeString

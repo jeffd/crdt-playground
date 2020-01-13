@@ -8,6 +8,7 @@
 
 import Foundation
 import Compression
+import CRDT
 
 // deals with communication between memory and network (no disk storage in this sample code)
 class MemoryNetworkLayer

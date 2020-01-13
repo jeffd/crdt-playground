@@ -9,7 +9,7 @@
 import UIKit
 import UserNotifications
 import CloudKit
-//import CRDTFramework_iOS
+import CRDT
 
 // AB: bridged frameworks get 10x worse performance, so we're forced to just include the files until we figure
 // out how to do a pure Swift framework

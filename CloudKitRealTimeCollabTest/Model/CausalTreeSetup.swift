@@ -8,7 +8,7 @@
 
 import Foundation
 import CoreGraphics
-//import CRDTFramework_iOS
+import CRDT
 
 extension UUID: BinaryCodable {}
 extension CGPoint: BinaryCodable {}

@@ -13,7 +13,7 @@
 // TODO: selection is incorrect if site index shifts current side; should use absolute units
 
 import Cocoa
-//import CRDTFramework_OSX
+import CRDT
 
 protocol CausalTreeDisplayViewControllerDelegate: class
 {

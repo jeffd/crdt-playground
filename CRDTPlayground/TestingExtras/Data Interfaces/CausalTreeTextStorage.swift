@@ -10,7 +10,7 @@
  without any mapping or translation work. */
 
 import AppKit
-//import CRDTFramework_OSX
+import CRDT
 
 class CausalTreeTextStorage: NSTextStorage
 {
@@ -91,7 +91,7 @@ class CausalTreeTextStorage: NSTextStorage
         self.endEditing()
     }
     
-    private(set) var backedString: CausalTreeStringWrapper
+    private(set) public var backedString: CausalTreeStringWrapper
     override var string: String
     {
         //return self.backedString

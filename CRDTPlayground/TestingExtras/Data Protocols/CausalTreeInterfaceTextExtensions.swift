@@ -7,7 +7,7 @@
 //
 
 import AppKit
-//import CRDTFramework_OSX
+import CRDT
 
 class TextScrollView: NSScrollView, CausalTreeContentView, NSTextStorageDelegate
 {
