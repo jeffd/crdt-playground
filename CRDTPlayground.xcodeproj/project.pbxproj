@@ -3,10 +3,12 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 48;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0B900E6B23CBAAE5007E4104 /* CRDT in Frameworks */ = {isa = PBXBuildFile; productRef = 0B900E6A23CBAAE5007E4104 /* CRDT */; };
+		0B900E6D23CBABCA007E4104 /* CRDT in Frameworks */ = {isa = PBXBuildFile; productRef = 0B900E6C23CBABCA007E4104 /* CRDT */; };
 		4E077F9C1F7024DD00FAEE15 /* CausalTreeInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E077F9B1F7024DD00FAEE15 /* CausalTreeInterface.swift */; };
 		4E077F9E1F70250B00FAEE15 /* CausalTreeInterfaceTextExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E077F9D1F70250B00FAEE15 /* CausalTreeInterfaceTextExtensions.swift */; };
 		4E0E95E61F98BD5300D35635 /* CausalTreeSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E0E95E51F98BD5300D35635 /* CausalTreeSetup.swift */; };
@@ -19,7 +21,6 @@
 		4E2AB0731F9A10E0006F47C9 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E2AB0721F9A10E0006F47C9 /* Network.swift */; };
 		4E3B3ACE1F620C2300BDF63A /* CausalTreeControlViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3B3ACD1F620C2300BDF63A /* CausalTreeControlViewController.swift */; };
 		4E412413208C177600003041 /* CausalTreeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E412412208C177600003041 /* CausalTreeTests.swift */; };
-		4E4476CB1F98FC650030364C /* CRDTFramework-iOS.h in Headers */ = {isa = PBXBuildFile; fileRef = 4E64F1B61F98AD0400569170 /* CRDTFramework-iOS.h */; };
 		4E4476DC1F9914810030364C /* BinaryCodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDC18D01F6F262600E47028 /* BinaryCodable.swift */; };
 		4E4476DD1F9914810030364C /* BinaryCodableExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDC18D31F6F262700E47028 /* BinaryCodableExtensions.swift */; };
 		4E4476DE1F9914810030364C /* BinaryDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDC18D21F6F262700E47028 /* BinaryDecoder.swift */; };
@@ -38,7 +39,6 @@
 		4E7962CD1F60357A00EFB542 /* CausalTreeDisplayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EFBCD251F5454B10091F778 /* CausalTreeDisplayViewController.swift */; };
 		4E964A0F1F9963E60076EFA1 /* CausalTreeCloudKitTextStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E4476E21F9915CC0030364C /* CausalTreeCloudKitTextStorage.swift */; };
 		4EAB4774207FFF7000D5B189 /* ORDTTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EAB4773207FFF7000D5B189 /* ORDTTests.swift */; };
-		4EAB4776207FFF7000D5B189 /* CRDTFramework_OSX.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4EFBCD461F5454DD0091F778 /* CRDTFramework_OSX.framework */; };
 		4EB3C0931F7172DC007F5F51 /* CausalTreeInterfaceDrawExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB3C0921F7172DC007F5F51 /* CausalTreeInterfaceDrawExtensions.swift */; };
 		4EB3C0951F71C473007F5F51 /* CausalTreeDrawEditingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB3C0941F71C473007F5F51 /* CausalTreeDrawEditingView.swift */; };
 		4EBDC4F01F9BB52100FC0DEB /* MemoryNetworkLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EBDC4EF1F9BB52100FC0DEB /* MemoryNetworkLayer.swift */; };
@@ -55,13 +55,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		4EAB4777207FFF7000D5B189 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 4EFBCD181F5454B10091F778 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 4EFBCD451F5454DD0091F778;
-			remoteInfo = "CRDTFramework-OSX";
-		};
 		956EE0C6219EE01B00DC426E /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 4EFBCD181F5454B10091F778 /* Project object */;
@@ -109,7 +102,6 @@
 		4E64F1891F98AAA800569170 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4E64F18C1F98AAA800569170 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4E64F18E1F98AAA800569170 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		4E64F1B41F98AD0300569170 /* CRDTFramework_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CRDTFramework_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4E64F1B61F98AD0400569170 /* CRDTFramework-iOS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CRDTFramework-iOS.h"; sourceTree = "<group>"; };
 		4E64F1B71F98AD0400569170 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4E65779F1F9BD70100016F61 /* DataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStack.swift; sourceTree = "<group>"; };
@@ -139,7 +131,6 @@
 		4EFBCD2A1F5454B10091F778 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4EFBCD2C1F5454B10091F778 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4EFBCD2D1F5454B10091F778 /* CRDTPlayground.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CRDTPlayground.entitlements; sourceTree = "<group>"; };
-		4EFBCD461F5454DD0091F778 /* CRDTFramework_OSX.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CRDTFramework_OSX.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,13 +139,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4E2AB0711F9A09AA006F47C9 /* CloudKit.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		4E64F1B01F98AD0300569170 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
+				0B900E6B23CBAAE5007E4104 /* CRDT in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -162,7 +147,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4EAB4776207FFF7000D5B189 /* CRDTFramework_OSX.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -170,13 +154,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		4EFBCD421F5454DD0091F778 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
+				0B900E6D23CBABCA007E4104 /* CRDT in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -344,9 +322,7 @@
 			isa = PBXGroup;
 			children = (
 				4EFBCD201F5454B10091F778 /* CRDTPlayground.app */,
-				4EFBCD461F5454DD0091F778 /* CRDTFramework_OSX.framework */,
 				4E64F17E1F98AAA800569170 /* CloudKitRealTimeCollabTest.app */,
-				4E64F1B41F98AD0300569170 /* CRDTFramework_iOS.framework */,
 				4EAB4771207FFF7000D5B189 /* ORDTTests.xctest */,
 			);
 			name = Products;
@@ -369,24 +345,6 @@
 		};
 /* End PBXGroup section */
 
-/* Begin PBXHeadersBuildPhase section */
-		4E64F1B11F98AD0300569170 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				4E4476CB1F98FC650030364C /* CRDTFramework-iOS.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		4EFBCD431F5454DD0091F778 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXHeadersBuildPhase section */
-
 /* Begin PBXNativeTarget section */
 		4E64F17D1F98AAA800569170 /* CloudKitRealTimeCollabTest */ = {
 			isa = PBXNativeTarget;
@@ -402,27 +360,12 @@
 			dependencies = (
 			);
 			name = CloudKitRealTimeCollabTest;
+			packageProductDependencies = (
+				0B900E6A23CBAAE5007E4104 /* CRDT */,
+			);
 			productName = CloudKitRealTimeCollabTest;
 			productReference = 4E64F17E1F98AAA800569170 /* CloudKitRealTimeCollabTest.app */;
 			productType = "com.apple.product-type.application";
-		};
-		4E64F1B31F98AD0300569170 /* CRDTFramework-iOS */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 4E64F1BD1F98AD0400569170 /* Build configuration list for PBXNativeTarget "CRDTFramework-iOS" */;
-			buildPhases = (
-				4E64F1AF1F98AD0300569170 /* Sources */,
-				4E64F1B01F98AD0300569170 /* Frameworks */,
-				4E64F1B11F98AD0300569170 /* Headers */,
-				4E64F1B21F98AD0300569170 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = "CRDTFramework-iOS";
-			productName = CRDTFramework_iOS;
-			productReference = 4E64F1B41F98AD0300569170 /* CRDTFramework_iOS.framework */;
-			productType = "com.apple.product-type.framework";
 		};
 		4EAB4770207FFF7000D5B189 /* ORDTTests */ = {
 			isa = PBXNativeTarget;
@@ -435,7 +378,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				4EAB4778207FFF7000D5B189 /* PBXTargetDependency */,
 				956EE0C7219EE01B00DC426E /* PBXTargetDependency */,
 			);
 			name = ORDTTests;
@@ -456,27 +398,12 @@
 			dependencies = (
 			);
 			name = CRDTPlayground;
+			packageProductDependencies = (
+				0B900E6C23CBABCA007E4104 /* CRDT */,
+			);
 			productName = CRDTPlayground;
 			productReference = 4EFBCD201F5454B10091F778 /* CRDTPlayground.app */;
 			productType = "com.apple.product-type.application";
-		};
-		4EFBCD451F5454DD0091F778 /* CRDTFramework-OSX */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 4EFBCD5D1F5454DE0091F778 /* Build configuration list for PBXNativeTarget "CRDTFramework-OSX" */;
-			buildPhases = (
-				4EFBCD411F5454DD0091F778 /* Sources */,
-				4EFBCD421F5454DD0091F778 /* Frameworks */,
-				4EFBCD431F5454DD0091F778 /* Headers */,
-				4EFBCD441F5454DD0091F778 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = "CRDTFramework-OSX";
-			productName = CRDTFramework;
-			productReference = 4EFBCD461F5454DD0091F778 /* CRDTFramework_OSX.framework */;
-			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
 
@@ -504,11 +431,6 @@
 							};
 						};
 					};
-					4E64F1B31F98AD0300569170 = {
-						CreatedOnToolsVersion = 9.0;
-						LastSwiftMigration = 1020;
-						ProvisioningStyle = Automatic;
-					};
 					4EAB4770207FFF7000D5B189 = {
 						CreatedOnToolsVersion = 9.0;
 						LastSwiftMigration = 1020;
@@ -527,11 +449,6 @@
 							};
 						};
 					};
-					4EFBCD451F5454DD0091F778 = {
-						CreatedOnToolsVersion = 9.0;
-						LastSwiftMigration = 1100;
-						ProvisioningStyle = Automatic;
-					};
 				};
 			};
 			buildConfigurationList = 4EFBCD1B1F5454B10091F778 /* Build configuration list for PBXProject "CRDTPlayground" */;
@@ -549,8 +466,6 @@
 			targets = (
 				4EFBCD1F1F5454B10091F778 /* CRDTPlayground */,
 				4E64F17D1F98AAA800569170 /* CloudKitRealTimeCollabTest */,
-				4EFBCD451F5454DD0091F778 /* CRDTFramework-OSX */,
-				4E64F1B31F98AD0300569170 /* CRDTFramework-iOS */,
 				4EAB4770207FFF7000D5B189 /* ORDTTests */,
 			);
 		};
@@ -567,13 +482,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		4E64F1B21F98AD0300569170 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		4EAB476F207FFF7000D5B189 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -587,13 +495,6 @@
 			files = (
 				4EFBCD281F5454B10091F778 /* Assets.xcassets in Resources */,
 				4EFBCD2B1F5454B10091F778 /* Main.storyboard in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		4EFBCD441F5454DD0091F778 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -617,13 +518,6 @@
 				4E4476DD1F9914810030364C /* BinaryCodableExtensions.swift in Sources */,
 				4E4476DC1F9914810030364C /* BinaryCodable.swift in Sources */,
 				4E2AB0731F9A10E0006F47C9 /* Network.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		4E64F1AF1F98AD0300569170 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -665,21 +559,9 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		4EFBCD411F5454DD0091F778 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		4EAB4778207FFF7000D5B189 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 4EFBCD451F5454DD0091F778 /* CRDTFramework-OSX */;
-			targetProxy = 4EAB4777207FFF7000D5B189 /* PBXContainerItemProxy */;
-		};
 		956EE0C7219EE01B00DC426E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 4EFBCD1F1F5454B10091F778 /* CRDTPlayground */;
@@ -759,74 +641,6 @@
 			};
 			name = Release;
 		};
-		4E64F1BE1F98AD0400569170 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				APPLICATION_EXTENSION_API_ONLY = YES;
-				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
-				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = "";
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "CRDTFramework-iOS/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.rhonabwy.CRDTFramework-iOS";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
-				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SUPPORTS_MACCATALYST = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		4E64F1BF1F98AD0400569170 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				APPLICATION_EXTENSION_API_ONLY = YES;
-				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
-				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = "";
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_OPTIMIZATION_LEVEL = fast;
-				INFOPLIST_FILE = "CRDTFramework-iOS/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.rhonabwy.CRDTFramework-iOS";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
-				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SUPPORTS_MACCATALYST = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
 		4EAB477A207FFF7000D5B189 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -837,7 +651,11 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = BDV4VC27D3;
 				INFOPLIST_FILE = ORDTTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
 				MACOSX_DEPLOYMENT_TARGET = 10.14;
 				PRODUCT_BUNDLE_IDENTIFIER = "Alexei-Baboulevitch.ORDTTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -857,7 +675,11 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = BDV4VC27D3;
 				INFOPLIST_FILE = ORDTTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
 				MACOSX_DEPLOYMENT_TARGET = 10.14;
 				PRODUCT_BUNDLE_IDENTIFIER = "Alexei-Baboulevitch.ORDTTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -972,7 +794,8 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				MTL_ENABLE_DEBUG_INFO = NO;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
@@ -1014,67 +837,6 @@
 			};
 			name = Release;
 		};
-		4EFBCD5E1F5454DE0091F778 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				APPLICATION_EXTENSION_API_ONLY = YES;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CODE_SIGN_STYLE = Automatic;
-				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = "";
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				FRAMEWORK_VERSION = A;
-				INFOPLIST_FILE = CRDTFramework/Info.plist;
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.14;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.rhonabwy.CRDTFramework-OSX";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
-				SDKROOT = macosx;
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 5.0;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		4EFBCD5F1F5454DE0091F778 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				APPLICATION_EXTENSION_API_ONLY = YES;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CODE_SIGN_STYLE = Automatic;
-				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = "";
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				FRAMEWORK_VERSION = A;
-				GCC_OPTIMIZATION_LEVEL = fast;
-				INFOPLIST_FILE = CRDTFramework/Info.plist;
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.14;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.rhonabwy.CRDTFramework-OSX";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
-				SDKROOT = macosx;
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 5.0;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1083,15 +845,6 @@
 			buildConfigurations = (
 				4E64F18F1F98AAA800569170 /* Debug */,
 				4E64F1901F98AAA800569170 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		4E64F1BD1F98AD0400569170 /* Build configuration list for PBXNativeTarget "CRDTFramework-iOS" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				4E64F1BE1F98AD0400569170 /* Debug */,
-				4E64F1BF1F98AD0400569170 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -1123,16 +876,18 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		4EFBCD5D1F5454DE0091F778 /* Build configuration list for PBXNativeTarget "CRDTFramework-OSX" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				4EFBCD5E1F5454DE0091F778 /* Debug */,
-				4EFBCD5F1F5454DE0091F778 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 /* End XCConfigurationList section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		0B900E6A23CBAAE5007E4104 /* CRDT */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = CRDT;
+		};
+		0B900E6C23CBABCA007E4104 /* CRDT */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = CRDT;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 4EFBCD181F5454B10091F778 /* Project object */;
 }
